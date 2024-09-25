@@ -2,6 +2,38 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+body {
+  background-color: #f1f1f1;
+}
+
+label {
+  font-size: 24px;
+}
+
+i {
+  font-size: 24px;
+}
+
+button {
+  background: none;
+  border: none;
+  position: absolute;
+  right: 10px;
+  top: 6px;
+  cursor: pointer;
+}
+
+.search-box {
+  margin: 4rem auto;
+  position: relative;
+  width: fit-content;
+}
+
+input {
+  padding: 8px 24px;
 }
 
 /* configure styling for elements created by weather class */
