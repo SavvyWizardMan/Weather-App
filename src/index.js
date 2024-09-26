@@ -24,6 +24,7 @@ import { converts } from "./util";
           const weatherCard = new Weather();
           const today = data.currentConditions;
           weatherCard.buildTodayCard(today.temp, today.humidity, today.windspeed, data.timezone, data.resolvedAddress, today.icon, data.description);
+          weatherCard.buildWeeklyCards(data);
         })
         .catch(function (error) {
           alert("invalid location");
@@ -36,9 +37,11 @@ import { converts } from "./util";
       const weather = getWeatherInfo(input.value);
       weather
         .then(function (data) {
+          console.log(data);
           const weatherCard = new Weather();
           const today = data.currentConditions;
           weatherCard.buildTodayCard(today.temp, today.humidity, today.windspeed, data.timezone, data.resolvedAddress, today.icon, data.description);
+          weatherCard.buildWeeklyCards(data);
         })
         .catch(function (error) {
           alert("invalid location");
@@ -66,14 +69,7 @@ import { converts } from "./util";
     w.then(function(data) {
       const today = data.currentConditions;
       weather.buildTodayCard(today.temp, today.humidity, today.windspeed, data.timezone, data.resolvedAddress, today.icon, data.description);
+      weather.buildWeeklyCards(data);
     });
   });
-  /* 
-        input event listener (keydown)
-          - make it call getWeatherInfo with input.value ass param and assign the call to var
-          - pass properties of var to Weather class
-        button event listener
-          - basically do the same as input
-        additional fancy sthuff
-    */
 })();

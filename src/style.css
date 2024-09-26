@@ -35,6 +35,18 @@ i {
 
 .CorF {
   padding: 8px 24px;
+  border: 2px solid #ffa800;
+  cursor: pointer;
+  transition: all 0.5s;
+}
+
+.CorF:hover {
+  transform: translateX(-5px) translateY(-5px);
+  box-shadow: 2px 2px 1px 2px black;
+}
+
+.CorF:active {
+  transform: translateX(0) translateY(0);
 }
 
 .bold {
@@ -49,6 +61,7 @@ i {
 
 input {
   padding: 8px 24px;
+  border: 2px solid black;
 }
 
 .today-box {
@@ -77,8 +90,24 @@ input {
   width: calc(100% - 600px);
 }
 
+.weekly-box {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  margin-top: 24px;
+  justify-items: center;
+}
+
+.inner-weekly-card {
+  border: 2px solid black;
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin-top: 12px;
+  row-gap: 12px;
+}
+
 .weather-info {
   padding: 24px;
-  display: grid;
   margin: 0 auto;
 }
