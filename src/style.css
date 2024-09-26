@@ -2,7 +2,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
 }
 
 body {
@@ -36,4 +36,34 @@ input {
   padding: 8px 24px;
 }
 
-/* configure styling for elements created by weather class */
+.today-box {
+  margin: 0 auto;
+  width: 800px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.today-icon {
+  width: 100px;
+  height: 100px;
+}
+
+.inner-today-box {
+  margin-left: 24px;
+  margin-right: 24px;
+  display: flex;
+  justify-content: center;
+  align-items: left;
+  flex-direction: column;
+}
+
+.info-today-box {
+  width: calc(100% - 600px);
+}
+
+.weather-info {
+  padding: 24px;
+  display: grid;
+  margin: 0 auto;
+}
