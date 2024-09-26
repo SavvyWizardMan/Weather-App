@@ -60,6 +60,13 @@ import { converts } from "./util";
       c.classList.remove('bold');
       f.classList.add('bold');
     }
+
+    const w = getWeatherInfo(input.value);
+    const weather = new Weather();
+    w.then(function(data) {
+      const today = data.currentConditions;
+      weather.buildTodayCard(today.temp, today.humidity, today.windspeed, data.timezone, data.resolvedAddress, today.icon, data.description);
+    });
   });
   /* 
         input event listener (keydown)

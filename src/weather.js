@@ -25,6 +25,8 @@ export default class Weather {
       " " +
       new Date().toLocaleString("en-US", { timeZone: timezone });
     p2.innerText = description;
+    // get the state of the CorF button ig and use that to determine units and conversions
+    // only way I can think of preserving the users choice of units
     p3.innerText = "Temperature: " + temp + "°";
     p4.innerText = "Humidity: " + humidity;
     p5.innerText = "Wind Speed: " + windspeed;
