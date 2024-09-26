@@ -17,13 +17,28 @@ i {
   font-size: 24px;
 }
 
-button {
+.top {
+  width: 100%;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.search {
   background: none;
   border: none;
   position: absolute;
   right: 10px;
   top: 6px;
   cursor: pointer;
+}
+
+.CorF {
+  padding: 8px 24px;
+}
+
+.bold {
+  font-weight: bold;
 }
 
 .search-box {

@@ -4,7 +4,7 @@ export default class Weather {
   constructor() {
   }
 
-  buildTodayCard(obj) {
+  buildTodayCard(temp, humidity, windspeed, timezone, resolvedAddress, icon, description) {
     document.querySelector(".weather-info").innerHTML = "";
 
     const div = document.createElement("div");
@@ -21,19 +21,18 @@ export default class Weather {
     desc.classList.add("inner-today-box");
     info.classList.add("info-today-box");
     p.innerText =
-      obj.resolvedAddress +
+      resolvedAddress +
       " " +
-      new Date().toLocaleString("en-US", { timeZone: obj.timezone });
-    p2.innerText = obj.description;
-    p3.innerText = "Temperature: " + obj.currentConditions.temp;
-    p4.innerText = "Humidity: " + obj.currentConditions.humidity;
-    p5.innerText = "Wind Speed: " + obj.currentConditions.windspeed + "mph";
+      new Date().toLocaleString("en-US", { timeZone: timezone });
+    p2.innerText = description;
+    p3.innerText = "Temperature: " + temp + "°";
+    p4.innerText = "Humidity: " + humidity;
+    p5.innerText = "Wind Speed: " + windspeed;
 
-    console.log(obj);
-    determineIcon(obj.currentConditions.icon).then(function (i) {
+    determineIcon(icon).then(function (i) {
       icons.src = i.url;
     });
-    icons.alt = obj.currentConditions.icon;
+    icons.alt = icon;
     icons.classList.add("today-icon");
 
     div.appendChild(icons);
